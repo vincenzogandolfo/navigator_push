@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProfilePage(),
+                builder: (context) => ProfilePage(name: 'Vincenzo'),
               ),
             );
           },
@@ -40,6 +40,8 @@ class HomePage extends StatelessWidget {
 }
 
 class ProfilePage extends StatelessWidget {
+  final String name;
+  ProfilePage({required this.name});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,8 +52,8 @@ class ProfilePage extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        title: const Center(
-          child: Text('ProfilePage'),
+        title: Center(
+          child: Text('ProfilePage: $name'),
         ),
       ),
     );
